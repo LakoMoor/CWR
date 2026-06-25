@@ -1,4 +1,9 @@
+#if defined(__x86_64__) || defined(__i386__) || defined(_M_X64) || defined(_M_IX86)
 #include <immintrin.h>
+#elif defined(__aarch64__) || defined(__arm__)
+#define SSE2NEON_SUPPRESS_WARNINGS
+#include <sse2neon/sse2neon.h>
+#endif
 #ifdef _MSC_VER
 #pragma once
 #endif
