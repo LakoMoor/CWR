@@ -2,7 +2,11 @@
 
 #include <string.h>
 #include <string>
+#ifndef __APPLE__
 #include <malloc.h>
+#else
+#include <stdlib.h>
+#endif
 #include <fcntl.h>
 #include <time.h>
 

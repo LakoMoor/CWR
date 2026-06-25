@@ -2,8 +2,10 @@
 
 #ifdef _MSC_VER
 #include <intrin.h>
-#else
+#elif defined(__x86_64__) || defined(__i386__)
 #include <xmmintrin.h>
+#elif defined(__aarch64__) || defined(__arm__)
+#include <sse2neon/sse2neon.h>
 #endif
 
 namespace Poseidon::Foundation

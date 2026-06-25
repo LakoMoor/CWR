@@ -57,6 +57,10 @@ if(WIN32)
         ws2_32.lib
         legacy_stdio_definitions.lib
     )
+elseif(APPLE)
+    target_link_libraries(PoseidonGame PRIVATE
+        GameBase PoseidonGL33 Poseidon PoseidonOpenAL
+    )
 else()
     target_link_libraries(PoseidonGame PRIVATE
         -Wl,--start-group

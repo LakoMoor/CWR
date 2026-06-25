@@ -9,8 +9,10 @@
 #include <Poseidon/Foundation/Math/Math3D.hpp>
 #ifdef _MSC_VER
 #include <intrin.h> // For MMX intrinsics
-#else
+#elif defined(__x86_64__) || defined(__i386__)
 #include <x86intrin.h>
+#elif defined(__aarch64__) || defined(__arm__)
+#include <sse2neon/sse2neon.h>
 #endif
 
 #if defined __ICL
